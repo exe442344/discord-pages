@@ -68,7 +68,7 @@ class DiscordEmbedPages {
         this.channel.send({ embed: this.pages[0] }).then(msg => {
             this.msg = msg;
             msg.react("◀️").catch(() => null);
-            msg.react("865208075089477673").catch(() => null);
+            msg.react("❤").catch(() => null);
             msg.react("⏹").catch(() => null);
             const filter = (reaction, user) => {
                 if (user.bot) return false;
@@ -81,7 +81,7 @@ class DiscordEmbedPages {
             collector.on("collect", (reaction, user) => {
             reaction.users.remove(user.id);
                 switch(reaction.emoji.name) {
-                case "865208075089477673":
+                case "❤":
                     return this.nextPage();
                 case "◀️":
                     return this.previousPage();
